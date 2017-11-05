@@ -1,0 +1,7 @@
+{
+  "name": "@private-package/bar",
+  "version": "0.0.0",
+  "dependencies": {
+    "@private-package/foo": "0.0.0"
+  }
+}
