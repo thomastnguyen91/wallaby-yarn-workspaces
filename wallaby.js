@@ -36,6 +36,7 @@ module.exports = function(wallaby) {
     setup: w => {
       const jestConfig = require('./package.json').jest;
       jestConfig.moduleNameMapper = {
+        '^@private-package/foo-foo': w.projectCacheDir + '/packages/foo',
         '^@private-package/(.+)': w.projectCacheDir + '/packages/$1',
       };
       wallaby.testFramework.configure(jestConfig);
