@@ -1,4 +1,4 @@
-import foo from "@private-package/foo";
+import foo from "@private-package/foo-foo";
 
 describe("test", () => {
   it("should pass when a is 1", () => {

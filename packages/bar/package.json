@@ -1,7 +1,7 @@
 {
-  "name": "@private-package/bar",
+  "name": "@private-package/bar-bar",
   "version": "0.0.0",
   "dependencies": {
-    "@private-package/foo": "0.0.0"
+    "@private-package/foo-foo": "0.0.0"
   }
 }
