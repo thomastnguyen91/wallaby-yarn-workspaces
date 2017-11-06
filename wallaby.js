@@ -11,12 +11,14 @@ module.exports = function(wallaby) {
         pattern: "packages/**/__tests__/**",
         ignore: true,
       },
+      '!packages/**/node_modules/**',
     ],
 
     tests: [
       {
         pattern: "packages/**/__tests__/**",
       },
+      '!packages/**/node_modules/**',
     ],
 
     testFramework: "jest",
@@ -30,5 +32,13 @@ module.exports = function(wallaby) {
     debug: true,
 
     reportConsoleErrorAsError: true,
+
+    setup: w => {
+      const jestConfig = require('./package.json').jest;
+      jestConfig.moduleNameMapper = {
+        '^@private-package/(.+)': w.projectCacheDir + '/packages/$1',
+      };
+      wallaby.testFramework.configure(jestConfig);
+    },
   };
 };
